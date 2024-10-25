@@ -17,12 +17,12 @@ The **Restaurant Management System** is a Java Swing application that allows res
   - Create, update, and delete customer orders.
   - manage dine-in and take away orders.
 
-  **Table and Room Management**:
+- **Table and Room Management**:
 
   - Invoise holding option for table and room orders
   - Track order statuses and manage tables and rooms.
 
-  - **Kitchen Order Ticket (KOT)**:
+- **Kitchen Order Ticket (KOT)**:
 
   - Generate and manage KOTs for customer orders.
   - Print KOTs for kitchen staff to prepare the ordered dishes.

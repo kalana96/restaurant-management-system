@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="KOT" pageWidth="226" pageHeight="283" columnWidth="204" leftMargin="11" rightMargin="11" topMargin="11" bottomMargin="11" uuid="862f2e27-b210-4171-a782-293441402981">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL-Restaurant"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<parameter name="kotNo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 
+	KOT_No,
+	Ref_No,
+	Type,
+	Menu_Name,
+	Qty,
+	Price,
+	Order_To,
+	Date,
+	Time
+FROM t06resturent_kot kot,
+	m06menu_item menu
+WHERE kot.Item_Code=menu.Menu_Code AND KOT_No= $P{kotNo}]]>
+	</queryString>
+	<field name="KOT_No" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="KOT_No"/>
+		<property name="com.jaspersoft.studio.field.label" value="KOT_No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Ref_No" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Ref_No"/>
+		<property name="com.jaspersoft.studio.field.label" value="Ref_No"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Type"/>
+		<property name="com.jaspersoft.studio.field.label" value="Type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Menu_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Menu_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Menu_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m06menu_item"/>
+	</field>
+	<field name="Qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="Qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Price"/>
+		<property name="com.jaspersoft.studio.field.label" value="Price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Order_To" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Order_To"/>
+		<property name="com.jaspersoft.studio.field.label" value="Order_To"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="Date"/>
+		<property name="com.jaspersoft.studio.field.label" value="Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<field name="Time" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="Time"/>
+		<property name="com.jaspersoft.studio.field.label" value="Time"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t06resturent_kot"/>
+	</field>
+	<variable name="QTY" class="java.lang.Integer" calculation="Sum"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="117" splitType="Stretch">
+			<staticText>
+				<reportElement x="95" y="72" width="25" height="20" uuid="8b3f99ac-7075-4b83-b5be-b28183559a10"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="52" width="30" height="20" uuid="aaa86ba0-d314-4187-b51b-25465f07581a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[KOT  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="72" width="30" height="20" uuid="efe4618b-1ffd-42ef-974e-e3658601ae99"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Table:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="93" width="203" height="1" uuid="bd10f3ec-729f-45d2-858a-d3a28651b156">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="95" width="150" height="20" uuid="4b846e5e-f4fe-4dc7-9206-69a029d18c65"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="95" width="53" height="20" uuid="b70569c8-80fc-4760-b9c2-e76a9a9bdc29"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="116" width="203" height="1" uuid="d85dd02e-d0e0-4fe2-9383-2bec9f9beede">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="M/d/yy h:mm a">
+				<reportElement x="120" y="72" width="83" height="20" uuid="0826ec0c-1c8f-455c-b7ba-9fe6af31f5fe"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="52" width="60" height="20" uuid="91281025-ac89-4e32-a558-7194849afbf6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="172d8200-2346-4cb5-9384-6395f2d0fb16"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{KOT_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="72" width="65" height="20" uuid="3bd793f8-352a-4c8b-96b5-8609568cec79"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Order_To}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="203" height="25" uuid="bc56b23c-29e7-41d4-9b4c-5396e6ce18a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Restaurant KOT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="52" width="25" height="20" uuid="e053371d-4d6d-4004-9330-cd08922305ce"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Ref   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="52" width="83" height="20" uuid="55b047db-fbc6-4438-8d8c-5ce7f445176b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ref_No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="25" width="203" height="20" uuid="633f590c-b3c5-4fc8-b506-05ac440c3fc4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="20" uuid="e65fe808-aa1c-4417-9d1d-f8a2edccfad4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ebefbdd-ec4f-4b28-b558-f54bc52d445f"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Menu_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="53" height="20" uuid="aa52861b-8875-4a37-835b-476ec825861e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a3e742f-68f8-4e43-bf0d-2fa3acf6e17b"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Qty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="46" splitType="Stretch">
+			<line>
+				<reportElement x="-2" y="10" width="205" height="1" uuid="4b48d844-51e3-41fc-9713-81dc5dbcf6eb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
